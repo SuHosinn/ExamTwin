@@ -150,7 +150,7 @@ export default function Home() {
     // 전체 배경 화면을 부드러운 연회색(bg-gray-50)으로 깔고 세로 정렬 구조를 잡습니다.
     <main className="min-h-screen bg-gray-50 p-8 flex flex-col items-center">
       {/* 화면 맨 상단 중앙에 배치되는 메인 대제목 타이틀 섹션 */}
-      <h1 className="text-3xl font-bold text-blue-600 mb-2">검정쌍둥이 커스텀 (ExamTwin Custom)</h1>
+      <h1 className="text-3xl font-bold text-blue-600 mb-2"> 문제 생성 페이지 (ExamTwin Custom)</h1>
       <p className="text-gray-600 mb-8">화면에서는 수식으로, 한글(HWP)에서는 깨짐 없는 텍스트로 깔끔하게 출제됩니다.</p>
 
       {/* 3단 가로 분할 레이아웃 시스템을 작동합니다. (모바일 등 화면이 좁아지면 자동으로 세로 정렬로 변경됩니다.) */}
