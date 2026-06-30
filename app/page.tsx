@@ -204,7 +204,7 @@ export default function Home() {
           {/* 세팅이 완료되어 최종 서버에 인공지능 연산을 발동시키는 메인 액션 버튼 파트 */}
           {/* 작업이 진행 중이거나 파일이 없을 땐 클릭을 원천 차단(disabled)하도록 안전 로직을 더했습니다. */}
           <button onClick={handleGenerate} disabled={loading || !file} className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 disabled:bg-gray-400 transition text-sm">
-            {loading ? 'AI가 맞춤형 시험지 출제 중...' : '쌍둥이 문제 & 해설지 생성 ✨'}
+            {loading ? 'AI가 맞춤형 시험지 출제 중...' : '문제 & 해설지 생성 ✨'}
           </button>
         </div>
 
@@ -213,9 +213,9 @@ export default function Home() {
           <div>
             {/* 프리뷰 상단 헤더 (타이틀과 다운로드 기능 결합) */}
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-semibold text-gray-700">2. 생성된 쌍둥이 문제지</h2>
+              <h2 className="text-lg font-semibold text-gray-700">2. 생성된 문제지</h2>
               {/* 문제 결과물이 도출되기 전에는 클릭을 막아두며, 클릭 시 가공 코드를 거쳐 정제된 HWP 파일이 다운로드됩니다. */}
-              <button onClick={() => downloadAsHwp('쌍둥이_문제지.hwp', examResult)} disabled={!examResult} className="bg-emerald-600 text-white px-2 py-1 rounded text-xs font-bold hover:bg-emerald-700 disabled:bg-gray-300">
+              <button onClick={() => downloadAsHwp('생성_문제지.hwp', examResult)} disabled={!examResult} className="bg-emerald-600 text-white px-2 py-1 rounded text-xs font-bold hover:bg-emerald-700 disabled:bg-gray-300">
                 📥 HWP 다운로드
               </button>
             </div>
@@ -239,9 +239,9 @@ export default function Home() {
           <div>
             {/* 프리뷰 상단 헤더 (타이틀과 해설지 전용 다운로드 기능 결합) */}
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-semibold text-gray-700">3. 분리된 정답 및 해설지</h2>
+              <h2 className="text-lg font-semibold text-gray-700">3. 문제 정답 및 해설지</h2>
               {/* 클릭하면 해설집 텍스트가 정제 처리를 거친 후 '쌍둥이_해설지.hwp' 라는 한글 문서로 저장됩니다. */}
-              <button onClick={() => downloadAsHwp('쌍둥이_해설지.hwp', answerResult)} disabled={!answerResult} className="bg-amber-600 text-white px-2 py-1 rounded text-xs font-bold hover:bg-amber-700 disabled:bg-gray-300">
+              <button onClick={() => downloadAsHwp('문제_해설지.hwp', answerResult)} disabled={!answerResult} className="bg-amber-600 text-white px-2 py-1 rounded text-xs font-bold hover:bg-amber-700 disabled:bg-gray-300">
                 📥 HWP 다운로드
               </button>
             </div>
