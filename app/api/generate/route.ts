@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     const mimeType = ext === 'pdf' ? 'application/pdf' : 'text/plain';
 
     // 3. 줄바꿈 여백, 원문자 보기(①~④), 해설지 문단 정렬을 엄격하게 강제하는 초정밀 지시서(프롬프트)를 작성합니다.
-    const systemContent = `너는 대한민국 최고의 고등학교 검정고시 수학/과학 전문 출제위원장이야.
+    const systemContent = `너는 대한민국 최고의 고등학교 검정고시 전문 출제위원장이야.
     제공되는 기출문제 파일을 정밀하게 분석하여, 사용자가 지정한 [출제 파트] 내에서 난이도와 유형이 완벽히 똑같은 쌍둥이 문제를 정확히 [출제 문항 수]만큼 새로 제작해줘.
     
     [출제 문항 수]: ${count}개
