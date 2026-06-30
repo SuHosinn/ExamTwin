@@ -182,16 +182,19 @@ export default function Home() {
                 <input 
                   type="number" 
                   min="1" 
-                  max="30" // 고품질 인공지능 답변 유지를 위해 한 번에 최대 30문항 가이드라인을 세웁니다.
+                  max="10" // 고품질 인공지능 답변 유지를 위해 한 번에 최대 30문항 가이드라인을 세웁니다.
                   value={count} 
                   onChange={(e) => setCount(e.target.value)} 
                   className="w-full p-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:outline-blue-500 focus:border-blue-500 text-gray-800 font-bold text-base"
-                  placeholder="예: 7"
+                  placeholder="문제 개수(1~10개)"
                 />
+                {Number(count) > 10 && (
+                  <p className="text-red-500 text-sm">※ 최대 10개까지만 생성할 수 있습니다.</p>
+                )}
                 {/* 인풋창 내부 우측 끝에 예쁘게 안착하는 '개' 글자 레이블 디자인 */}
                 <span className="absolute right-3 text-sm font-medium text-gray-500">개</span>
               </div>
-              <p className="text-[10px] text-gray-400 mt-1">※ AI의 안정적인 집중력을 위해 1~20개 사이를 권장합니다.</p>
+              <p className="text-[10px] text-gray-400 mt-1">※ AI의 안정적인 집중력을 위해 1~10개 사이를 권장합니다.</p>
             </div>
 
             {/* 특정 시험 단원 범위만 족집게 출제하고 싶을 때 적는 문자 입력 상자 구역 */}
